@@ -168,15 +168,6 @@ http {
            proxy_pass {{clusters.mz.ingress.base_url}}/idrepository/v1/;                                                                         
          }
 
-
-        location /registrationprocessor/v1/registrationstatus/ {
-           proxy_pass {{clusters.dmz.ingress.base_url}}/registrationprocessor/v1/registrationstatus/;
-        }
-
-        location /registrationprocessor/v1/packetreceiver/ {
-           proxy_pass {{clusters.dmz.ingress.base_url}}/registrationprocessor/v1/packetreceiver/;
-        }
-
         location /registrationprocessor/v1/securezone/ {
            proxy_pass {{clusters.mz.ingress.base_url}}/registrationprocessor/v1/securezone/;
         }
@@ -221,16 +212,8 @@ http {
            proxy_pass https://{{clusters.mz.nodeport_node}}:{{clusters.mz.dashboard.nodeport}}/;
         }
 
-        location /dmz-dashboard/ { # note: https needed here
-           proxy_pass https://{{clusters.dmz.nodeport_node}}:{{clusters.dmz.dashboard.nodeport}}/;
-        }
-
         location /{{clusters.mz.monitoring.grafana_ingress_path}}/ {
            proxy_pass  {{clusters.mz.ingress.base_url}}/{{clusters.mz.monitoring.grafana_ingress_path}}/;
-        }
-
-        location /{{clusters.dmz.monitoring.grafana_ingress_path}}/ {
-           proxy_pass  {{clusters.dmz.ingress.base_url}}/{{clusters.dmz.monitoring.grafana_ingress_path}}/;
         }
 
         location /kibana/ {
@@ -249,9 +232,6 @@ http {
            proxy_pass {{clusters.mz.ingress.base_url}}/resident/v1/;
         }
 
-        location /registration-client/ {
-           proxy_pass http://dmzworker0.sb:30080/registration-client/;
-        }
         location /activemq/ {
            proxy_pass http://mzworker0.sb:30080/activemq/;
         }
