@@ -48,13 +48,6 @@ variable "kube_names" {
      "mzmaster.sb": "10.20.20.99",
      "mzworker0.sb": "10.20.20.100",
      "mzworker1.sb": "10.20.20.101",
-     "mzworker2.sb": "10.20.20.102",
-     "mzworker3.sb": "10.20.20.103",
-     "mzworker4.sb": "10.20.20.104",
-     "mzworker5.sb": "10.20.20.105",
-     "mzworker6.sb": "10.20.20.106",
-     "mzworker7.sb": "10.20.20.107",
-     "mzworker8.sb": "10.20.20.108",
      "dmzmaster.sb": "10.20.20.199",
      "dmzworker0.sb": "10.20.20.200"
    }
