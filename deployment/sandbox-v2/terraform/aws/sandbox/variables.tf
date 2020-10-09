@@ -45,9 +45,11 @@ variable "kube_names" {
    type = map(string)
 
    default = {
-     "mzmaster.sb": "10.20.20.99",
-     "mzworker0.sb": "10.20.20.100",
-     "mzworker1.sb": "10.20.20.101"
+    "mzmaster.sb": "10.20.20.99",
+    "mzworker0.sb": "10.20.20.100",
+    "mzworker1.sb": "10.20.20.101",
+    "dmzmaster.sb": "10.20.20.199",
+    "dmzworker0.sb": "10.20.20.200"
    }
 }
 
