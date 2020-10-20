@@ -21,6 +21,7 @@ keycloak_mosip_clients:
   - {realm_id: 'mosip', client_id: 'mosip-crereq-client', secret: 'abc123'}
   - {realm_id: 'mosip', client_id: 'mosip-creser-client', secret: 'abc123'}
   - {realm_id: 'mosip', client_id: 'mosip-datsha-client', secret: 'abc123'}
+  - {realm_id: 'mosip', client_id: 'mosip-abis-client', secret: 'abc123'}
 
 keycloak_mosip_roles:  # Currently, all rolese belong to a realm (not to any client)
   - {realm_id: 'mosip', client_id: '', role_name: 'REGISTRATION_OFFICER'}
@@ -65,6 +66,7 @@ keycloak_mosip_roles:  # Currently, all rolese belong to a realm (not to any cli
   - {realm_id: 'mosip', client_id: '', role_name: 'DOCUMENT_READ'}
   - {realm_id: 'mosip', client_id: '', role_name: 'BIOMETRIC_READ'}
   - {realm_id: 'mosip', client_id: '', role_name: 'METADATA_READ'}
+  - {realm_id: 'mosip', client_id: '', role_name: 'ONLINE_VERIFICATION_PARTNER'}
 
 keycloak_mosip_users: # Assumption "username.json" exists with same username inside 
   - {realm_id: 'mosip', user_file: 'users/testuser.json'}
