@@ -1,7 +1,7 @@
 .terraform/
 id_rsa
 id_rsa.pub
+terraform.tfstate.backup1
 terraform.tfstate
-terraform.tfstate.backup
 tf.log
 
