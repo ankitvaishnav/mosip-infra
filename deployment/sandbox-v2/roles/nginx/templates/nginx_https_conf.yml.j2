@@ -30,8 +30,6 @@ http {
     include             /etc/nginx/mime.types;
     default_type        application/octet-stream;
 
-    disable_symlinks off; 
-
     # Load modular configuration files from the /etc/nginx/conf.d directory.
     # See http://nginx.org/en/docs/ngx_core_module.html#include
     # for more information.
@@ -69,14 +67,14 @@ http {
         proxy_buffers 8 16k;
         proxy_buffer_size 32k;  # This is needed to as responses may be huge
         client_max_body_size 8m; # Biometrics may there in the request.
-        ssl_certificate {{ ssl_certificate }};
-        ssl_certificate_key {{ ssl_certificate_key }};
+        ssl_certificate {{site.ssl.certificate}}; 
+        ssl_certificate_key {{site.ssl.certificate_key}}; 
         ssl_session_cache shared:SSL:1m;
         ssl_session_timeout  10m;
         ssl_ciphers HIGH:!aNULL:!MD5;
         ssl_prefer_server_ciphers on;
 
-        proxy_set_header Host $host;  
+        proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
@@ -217,12 +215,12 @@ http {
            proxy_pass {{clusters.mz.ingress.base_url}}/partnermanagement/v1/pmpartners/;
         }
 
-        location /mz-dashboard/ { # note: https needed here
-           proxy_pass https://{{clusters.mz.nodeport_node}}:{{clusters.mz.dashboard.nodeport}}/;
+        location /mz-dashboard/ {
+           proxy_pass {{clusters.mz.ingress.base_url}}/{{clusters.mz.dashboard.url}}/;
         }
 
-        location /dmz-dashboard/ { # note: https needed here
-           proxy_pass https://{{clusters.dmz.nodeport_node}}:{{clusters.dmz.dashboard.nodeport}}/;
+        location /dmz-dashboard/ {
+           proxy_pass {{clusters.dmz.ingress.base_url}}/{{clusters.dmz.dashboard.url}}/;
         }
 
         location /{{clusters.mz.monitoring.grafana_ingress_path}}/ {
@@ -231,10 +229,6 @@ http {
 
         location /{{clusters.dmz.monitoring.grafana_ingress_path}}/ {
            proxy_pass  {{clusters.dmz.ingress.base_url}}/{{clusters.dmz.monitoring.grafana_ingress_path}}/;
-        }
-
-        location /kibana/ {
-           proxy_pass  {{clusters.mz.ingress.base_url}}/kibana/;
         }
 
         location /v1/admin/ {
@@ -247,37 +241,6 @@ http {
 
         location /resident/v1/ {
            proxy_pass {{clusters.mz.ingress.base_url}}/resident/v1/;
-        }
-
-        location /registration-client/ {
-           proxy_pass http://dmzworker0.sb:30080/registration-client/;
-        }
-        location /activemq/ {
-           proxy_pass http://mzworker0.sb:30080/activemq/;
-        }
-
-        location /commons/v1/packetmanager/ {
-           proxy_pass http://mzworker0.sb:30080/commons/v1/packetmanager/;
-        }
-
-        location /minio/ {
-           proxy_pass http://mzworker0.sb:30080/minio/;
-        }
-
-        location /v1/bioextractor/mock/ {
-           proxy_pass http://mzworker0.sb:30080/v1/bioextractor/mock/;
-        }
-
-        location /v1/credentialrequest/{
-           proxy_pass http://mzworker0.sb:30080/v1/credentialrequest/;
-        }
-
-        location /v1/credentialservice/{
-           proxy_pass http://mzworker0.sb:30080/v1/credentialservice/;
-        }
-
-        location /v1/datashare/ {
-           proxy_pass http://mzworker0.sb:30080/v1/datashare/;
         }
 
         error_page 404 /404.html;
@@ -296,10 +259,9 @@ stream {
         listen {{postgres.nodeport}};  # For postgres. Connecting to nodeport
         proxy_pass {{postgres.server}}:{{postgres.nodeport}};
     }
-
     server {
-        listen {{activemq.nodeport}};  # For activemq. Connecting to nodeport
-        proxy_pass {{clusters.mz.nodeport_node}}:{{activemq.nodeport}};
+        listen 30616;  # For postgres. Connecting to nodeport
+        proxy_pass mzworker0:30616;
     }
 }
 

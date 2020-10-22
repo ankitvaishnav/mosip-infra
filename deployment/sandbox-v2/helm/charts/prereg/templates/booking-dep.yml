@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.services.booking.serviceName }} 
-  namespace: {{ .Release.Namespace }} 
+  namespace: {{ .Values.namespace }} 
   labels:
     app: {{ .Values.services.booking.serviceName }}
     component: {{ .Values.component }} 
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.services.booking.serviceName }} 
-        image: {{ .Values.services.booking.dockerImage }}
+        image: {{ .Values.services.booking.dockerImage }}:{{ .Values.services.booking.dockerTag }} 
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         env:
         - name: active_profile_env
@@ -41,13 +41,6 @@ spec:
           value: {{ .Values.isGlowroot }}
         ports:
         - containerPort: {{ .Values.services.booking.containerPort }}
-
-        {{- include "logger.mount" .  | indent 8}}
-
         readinessProbe:
           tcpSocket:
             port: {{ .Values.services.booking.containerPort }}
-
-      {{- include "logger.sidecar" .  | indent 6}}
-
-      {{- include "logger.volume" .  | indent 6}}

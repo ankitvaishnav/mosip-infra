@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.services.application.serviceName }} 
-  namespace: {{ .Release.Namespace }} 
+  name: {{ .Values.services.document.serviceName }} 
+  namespace: {{ .Values.namespace }} 
   labels:
-    app: {{ .Values.services.application.serviceName }}
+    app: {{ .Values.services.document.serviceName }}
     component: {{ .Values.component }} 
     
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.services.application.serviceName }} 
+      app: {{ .Values.services.document.serviceName }} 
   minReadySeconds: 10
   strategy:
     type: RollingUpdate
@@ -21,13 +21,12 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.services.application.serviceName }} 
+        app: {{ .Values.services.document.serviceName }} 
         component: {{ .Values.component }} 
     spec:
-      {{- include "dockerHubSecret" .  | indent 6}}
       containers:
-      - name: {{ .Values.services.application.serviceName }} 
-        image: {{ .Values.services.application.dockerImage }}
+      - name: {{ .Values.services.document.serviceName }} 
+        image: {{ .Values.services.document.dockerImage }}:{{ .Values.services.document.dockerTag }} 
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         env:
         - name: active_profile_env
@@ -41,23 +40,16 @@ spec:
         - name: is_glowroot_env
           value: {{ .Values.isGlowroot }}
         ports:
-        - containerPort: {{ .Values.services.application.containerPort }}
-
-        {{- include "logger.mount" .  | indent 8}}
-
+        - containerPort: {{ .Values.services.document.containerPort }}
         readinessProbe:
           httpGet:
-            path: {{ .Values.services.application.healthUrl }} 
-            port: {{ .Values.services.application.containerPort }} 
+            path: {{ .Values.services.document.healthUrl }}
+            port: {{ .Values.services.document.containerPort }}
           initialDelaySeconds: {{ .Values.probe.initialDelay }} 
           periodSeconds: {{ .Values.probe.period }} 
   #      livenessProbe:
   #        httpGet:
-  #          path: {{ .Values.services.application.healthUrl }} 
-  #          port: {{ .Values.services.application.containerPort }} 
+  #          path: {{ .Values.services.document.healthUrl }}
+  #          port: {{ .Values.services.document.containerPort }}
   #        initialDelaySeconds: {{ .Values.probe.initialDelay }} 
   #        periodSeconds: {{ .Values.probe.period }} 
-          
-      {{- include "logger.sidecar" .  | indent 6}}
-
-      {{- include "logger.volume" .  | indent 6}}

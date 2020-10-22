@@ -20,10 +20,9 @@ spec:
       labels:
         app: {{.Values.services.ui.serviceName}}
     spec:
-      {{- include "dockerHubSecret" .  | indent 6}}
       containers:
       - name: {{.Values.services.ui.serviceName}}
-        image: {{ .Values.services.ui.dockerImage  }}
+        image: {{ .Values.services.ui.dockerImage  }}:{{ .Values.services.ui.dockerTag }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         ports:
         - containerPort: {{ .Values.services.ui.containerPort }} 
@@ -43,6 +42,8 @@ spec:
               # The above path is fixed in Dockerfile
               subPath: config.json #TODO: subPath is needed.  Check why
               # The config map gets mounted like files where key=file, value=file contents
+      imagePullSecrets:
+      - name: pvt-reg-cred1
       volumes:
         - name: ui-config
           configMap:
