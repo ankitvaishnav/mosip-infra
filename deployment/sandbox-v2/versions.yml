@@ -23,8 +23,8 @@ versions:
         'kernel-otpmanager-service': 'mosipdev/kernel-otpmanager-service:1.1.1'
       rid:
         'kernel-ridgenerator-service': 'mosipdev/kernel-ridgenerator-service:1.1.1'
-#      keygen:
-#        'kernel-keys-generator': 'mosipdev/keys-generator:1.1.2'
+    #      keygen:
+    #        'kernel-keys-generator': 'mosipdev/keys-generator:1.1.2'
 
     prereg:
       login:
@@ -49,54 +49,60 @@ versions:
         'prereg-captcha-service': 'mosipdev/pre-registration-captcha-service:1.1.2'
       ui:
         'prereg-ui': 'mosipdev/pre-registration-ui:1.1.1'
-      
+
     registration:
       client:
         'reg-client-downloader': 'mosipdev/registration-client:1.1.2'
 
     regproc:
-      camel:
-        'regproc-camel-stage': 'mosipdev/registration-processor-common-camel-bridge:1.1.2'
-      notification: 
-        'regproc-securezone-notification-stage': 'mosipdev/registration-processor-securezone-notification-stage:1.1.2'
-      uploader:
-        'regproc-packet-uploader-stage': 'mosipdev/registration-processor-packet-uploader-stage:1.1.2'
-      quality:
-        'regproc-quality-checker-stage': 'mosipdev/registration-processor-quality-checker-stage:1.1.2'
-      validator:
-        'regproc-packet-validator-stage': 'mosipdev/registration-processor-packet-validator-stage:1.1.2'
-      osi:
-        'regproc-osi-validator-stage': 'mosipdev/registration-processor-osi-validator-stage:1.1.2'
-      demo:
-        'regproc-demo-dedupe-stage': 'mosipdev/registration-processor-demo-dedupe-stage:1.1.2'
-      bio:
-        'regproc-bio-dedupe-stage': 'mosipdev/registration-processor-bio-dedupe-stage:1.1.2'
-      bioauth:
-        'regproc-biometric-authentication-stage': 'mosipdev/registration-processor-biometric-authentication-stage:1.1.2'
       abishandler:
         'regproc-abis-handler-stage': 'mosipdev/registration-processor-abis-handler-stage:1.1.2'
       abismid:
         'regproc-abis-middleware-stage': 'mosipdev/registration-processor-abis-middleware-stage:1.1.2'
-      proxyabis:
-        'regproc-proxy-abis': 'mosipdev/registration-processor-abis:1.1.2'
-      manual:
-        'regproc-manual-verification-stage': 'mosipdev/registration-processor-manual-verification-stage:1.1.2'
+      bio:
+        'regproc-bio-dedupe-stage': 'mosipdev/registration-processor-bio-dedupe-stage:1.1.2'
+      bioauth:
+        'regproc-biometric-authentication-stage': 'mosipdev/registration-processor-biometric-authentication-stage:1.1.2'
+      biosvc:
+        'regproc-bio-dedupe-service': 'mosipdev/registration-processor-bio-dedupe-service:1.1.1'
+      camel:
+        'regproc-camel-stage': 'mosipdev/registration-processor-common-camel-bridge:1.1.2'
+      demo:
+        'regproc-demo-dedupe-stage': 'mosipdev/registration-processor-demo-dedupe-stage:1.1.2'
+      eis:
+        'regproc-external-integration-service': 'mosipdev/registration-processor-external-integration-service:1.1.2'
       external:
         'regproc-external-stage': 'mosipdev/registration-processor-external-stage:1.1.2'
-      eis: 
-        'regproc-external-integration-service': 'mosipdev/registration-processor-external-integration-service:1.1.2'
-      uin:
-        'regproc-uin-generator-stage': 'mosipdev/registration-processor-uin-generator-stage:1.1.2'
+      manual:
+        'regproc-manual-verification-stage': 'mosipdev/registration-processor-manual-verification-stage:1.1.2'
       msg:
         'regproc-message-sender-stage': 'mosipdev/registration-processor-message-sender-stage:1.1.2'
+      notification:
+        'regproc-securezone-notification-stage': 'mosipdev/registration-processor-securezone-notification-stage:1.1.2'
+      osi:
+        'regproc-osi-validator-stage': 'mosipdev/registration-processor-osi-validator-stage:1.1.2'
       print:
         'regproc-printing-stage': 'mosipdev/registration-processor-printing-stage:1.1.2'
+      printsvc:
+        'regproc-printing-service': 'mosipdev/registration-processor-printing-service:1.1.2'
+      proxyabis:
+        'regproc-proxy-abis': 'mosipdev/registration-processor-abis:1.1.2'
+      quality:
+        'regproc-quality-checker-stage': 'mosipdev/registration-processor-quality-checker-stage:1.1.1'
+      request:
+        'regproc-request-handler-service': 'mosipdev/registration-processor-request-handler-service:1.1.1'
       trans:
         'regproc-registration-transaction-service': 'mosipdev/registration-processor-registration-transaction-service:1.1.2'
-      reprocess:
-        'regproc-reprocessor-stage': 'mosipdev/registration-processor-reprocessor-stage:1.1.2'
+      uin:
+        'regproc-uin-generator-stage': 'mosipdev/registration-processor-uin-generator-stage:1.1.2'
+      uploader:
+        'regproc-packet-uploader-stage': 'mosipdev/registration-processor-packet-uploader-stage:1.1.2'
+      validator:
+        'regproc-packet-validator-stage': 'mosipdev/registration-processor-packet-validator-stage:1.1.2'
+    #      reprocess:
+    #        'regproc-reprocessor-stage': 'mosipdev/registration-processor-reprocessor-stage:1.1.2'
 
-    dmzregproc:  
+    dmzregproc:
       receiver:
         'regproc-packet-receiver-stage': 'mosipdev/registration-processor-packet-receiver-stage:1.1.2'
       camel:
@@ -105,23 +111,23 @@ versions:
         'regproc-registration-status-service': 'mosipdev/registration-processor-registration-status-service:1.1.2'
       pktserver:
         'regproc-dmz-packet-server': 'mosipdev/registration-processor-dmz-packet-server:1.0.9'
-        
+
     ida:
       auth:
         'ida-auth-service': 'mosipdev/authentication-service:1.1.2'
-      internal: 
-         'ida-internal-service': 'mosipdev/authentication-internal-service:1.1.2'
-      kyc: 
-         'ida-kyc-service': 'mosipdev/authentication-kyc-service:1.1.2'
-      otp: 
-         'ida-otp-service': 'mosipdev/authentication-otp-service:1.1.2'
-      keygen:  
+      internal:
+        'ida-internal-service': 'mosipdev/authentication-internal-service:1.1.2'
+      kyc:
+        'ida-kyc-service': 'mosipdev/authentication-kyc-service:1.1.2'
+      otp:
+        'ida-otp-service': 'mosipdev/authentication-otp-service:1.1.2'
+      keygen:
         'ida-key-generator': 'mosipdev/keys-generator:1.1.2'
 
     idrepo:
       identity:
         'idrepo-identity-service': 'mosipdev/id-repository-identity-service:1.1.2'
-      vid: 
+      vid:
         'idrepo-vid-service': 'mosipdev/id-repository-vid-service:1.1.2'
       bioextractor:
         'idrepo-bioextractor-service': 'mosipdev/bioextractor-service:1.1.2'
@@ -129,11 +135,11 @@ versions:
         'idrepo-credential-request-generator': 'mosipdev/credential-request-generator:1.1.2'
       credentialservice:
         'idrepo-credential-service': 'mosipdev/credential-service:1.1.2'
-      salt:  
+      salt:
         'idrepo-salt-generator': 'mosipdev/id-repository-salt-generator:1.1.2'
 
     pms:
-      misp: 
+      misp:
         'pms-misp-service': 'mosipdev/pmp-misp-service:1.1.2-SNAPSHOT'
       pm:
         'pms-partner-management-service': 'mosipdev/pmp-partner-management-service:1.1.2-SNAPSHOT'
@@ -143,16 +149,16 @@ versions:
         'pms-policy-management-service': 'mosipdev/pmp-policy-management-service:1.1.2-SNAPSHOT'
 
 
-    resident: 
-      resident:  
+    resident:
+      resident:
         'resident-service': 'mosipdev/resident-service:1.1.2'
-    
+
     admin:
       service:
         'admin-service': 'mosipdev/admin-service:1.1.2'
       ui:
         'admin-ui': 'mosipdev/admin-ui:1.1.2'
-    
+
     packetmanager:
       service:
         'packetmanager-service': 'mosipdev/commons-packet-service:1.1.2'
