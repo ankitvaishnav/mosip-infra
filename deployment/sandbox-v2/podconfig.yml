@@ -1,0 +1,22 @@
+podconfig:
+  kernel:
+    auth:
+      replicas: 1
+    masterdata:
+      replicas: 1
+    idgen:
+      replicas: 1
+    prid:
+      replicas: 1
+    sync:
+      replicas: 1
+    audit :
+      replicas: 1
+    key:
+      replicas: 1
+    notifier:
+      replicas: 1
+    otp:
+      replicas: 1
+    rid:
+      replicas: 1
