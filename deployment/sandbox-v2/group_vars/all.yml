@@ -177,19 +177,19 @@ repos:
   idrepo:
     src: https://github.com/mosip/id-repository
     dest: '{{tmp_dir}}/id-repository'
-    tag: 1.1.1
+    tag: master
   ida:
     src: https://github.com/mosip/id-authentication
     dest: '{{tmp_dir}}/id-authentication'
-    tag: 1.1.1
+    tag: 1.0.9
   pms:
     src: https://github.com/mosip/partner-management-services
     dest: '{{tmp_dir}}/partner-management-services'
-    tag: 1.1.1
-  websub:
-    src: https://github.com/mosip/websub
-    dest: '{{tmp_dir}}/websub'
-    tag: 1.1.1
+    tag: master
+#  websub:
+#    src: https://github.com/mosip/websub
+#    dest: '{{tmp_dir}}/websub'
+#    tag: 1.1.1
 
 # DBs 
 #
