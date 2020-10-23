@@ -236,9 +236,9 @@ databases:
   mosip_pms:
     user: pmpuser
     sql_path: '{{repos.pms.dest}}/db_scripts'
-  mosip_websub:
-    user: websubuser
-    sql_path: '{{repos.websub.dest}}/db_scripts'
+#  mosip_websub:
+#    user: websubuser
+#    sql_path: '{{repos.websub.dest}}/db_scripts'
 
 nfs:
   server: console.sb
