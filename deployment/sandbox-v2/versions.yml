@@ -121,8 +121,8 @@ versions:
         'ida-kyc-service': 'mosipdev/authentication-kyc-service:1.1.2'
       otp:
         'ida-otp-service': 'mosipdev/authentication-otp-service:1.1.2'
-      keygen:
-        'ida-key-generator': 'mosipdev/keys-generator:1.1.2'
+#      keygen:
+#        'ida-key-generator': 'mosipdev/keys-generator:1.1.2'
 
     idrepo:
       identity:

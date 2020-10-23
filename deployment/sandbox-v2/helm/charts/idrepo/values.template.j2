@@ -58,7 +58,7 @@ services:
     ingressPath: /v1/credentialservice
     healthUrl: /v1/credentialservice/actuator/health
 
-generators:
-  salt:  
+{#  salt:
     name: {{ versions.services.idrepo.salt.keys()[0] }} 
     dockerImage: {{ versions.services.idrepo.salt.values()[0] }}
+#}
