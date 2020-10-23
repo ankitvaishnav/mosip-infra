@@ -182,10 +182,10 @@ repos:
     src: https://github.com/mosip/id-authentication
     dest: '{{tmp_dir}}/id-authentication'
     tag: 1.0.9
-  pms:
-    src: https://github.com/mosip/partner-management-services
-    dest: '{{tmp_dir}}/partner-management-services'
-    tag: master
+#  pms:
+#    src: https://github.com/mosip/partner-management-services
+#    dest: '{{tmp_dir}}/partner-management-services'
+#    tag: master
 #  websub:
 #    src: https://github.com/mosip/websub
 #    dest: '{{tmp_dir}}/websub'
@@ -206,18 +206,18 @@ databases:
   mosip_audit:
     user: audituser
     sql_path: '{{repos.commons.dest}}/db_scripts'
-  mosip_authdevice:
-    user: authdeviceuser
-    sql_path: '{{repos.commons.dest}}/db_scripts'
-  mosip_keymgr:
-    user: keymgruser
-    sql_path: '{{repos.commons.dest}}/db_scripts'
-  mosip_regdevice:
-    user: regdeviceuser
-    sql_path: '{{repos.commons.dest}}/db_scripts'
-  mosip_credential:
-    user: credentialuser
-    sql_path: '{{repos.commons.dest}}/db_scripts'
+#  mosip_authdevice:
+#    user: authdeviceuser
+#    sql_path: '{{repos.commons.dest}}/db_scripts'
+#  mosip_keymgr:
+#    user: keymgruser
+#    sql_path: '{{repos.commons.dest}}/db_scripts'
+#  mosip_regdevice:
+#    user: regdeviceuser
+#    sql_path: '{{repos.commons.dest}}/db_scripts'
+#  mosip_credential:
+#    user: credentialuser
+#    sql_path: '{{repos.commons.dest}}/db_scripts'
   mosip_idrepo:
     user: idrepouser
     sql_path: '{{repos.commons.dest}}/db_scripts'
@@ -233,9 +233,9 @@ databases:
   mosip_ida:
     user: idauser
     sql_path: '{{repos.ida.dest}}/db_scripts'
-  mosip_pms:
-    user: pmpuser
-    sql_path: '{{repos.pms.dest}}/db_scripts'
+#  mosip_pms:
+#    user: pmpuser
+#    sql_path: '{{repos.pms.dest}}/db_scripts'
 #  mosip_websub:
 #    user: websubuser
 #    sql_path: '{{repos.websub.dest}}/db_scripts'
