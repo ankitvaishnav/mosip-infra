@@ -174,10 +174,10 @@ repos:
     src: https://github.com/mosip/registration
     dest: '{{tmp_dir}}/registration'
     tag: 1.1.1
-  idrepo:
-    src: https://github.com/mosip/id-repository
-    dest: '{{tmp_dir}}/id-repository'
-    tag: master
+#  idrepo:
+#    src: https://github.com/mosip/id-repository
+#    dest: '{{tmp_dir}}/id-repository'
+#    tag: master
   ida:
     src: https://github.com/mosip/id-authentication
     dest: '{{tmp_dir}}/id-authentication'
@@ -220,10 +220,10 @@ databases:
     sql_path: '{{repos.idrepo.dest}}/db_scripts'
   mosip_idrepo:
     user: idrepouser
-    sql_path: '{{repos.idrepo.dest}}/db_scripts'
+    sql_path: '{{repos.commons.dest}}/db_scripts'
   mosip_idmap:
     user: idmapuser
-    sql_path: '{{repos.idrepo.dest}}/db_scripts'
+    sql_path: '{{repos.commons.dest}}/db_scripts'
   mosip_prereg:
     user: prereguser
     sql_path: '{{repos.prereg.dest}}/db_scripts'
