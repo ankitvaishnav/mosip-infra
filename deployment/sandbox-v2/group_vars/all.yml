@@ -217,7 +217,7 @@ databases:
     sql_path: '{{repos.commons.dest}}/db_scripts'
   mosip_credential:
     user: credentialuser
-    sql_path: '{{repos.idrepo.dest}}/db_scripts'
+    sql_path: '{{repos.commons.dest}}/db_scripts'
   mosip_idrepo:
     user: idrepouser
     sql_path: '{{repos.commons.dest}}/db_scripts'
