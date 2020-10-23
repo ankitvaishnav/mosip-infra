@@ -30,29 +30,29 @@ versions:
       login:
         'prereg-login-service': 'mosipdev/pre-registration-login-service:1.1.1'
       batch:
-        'prereg-batchjob-service': 'mosipdev/pre-registration-batchjob:1.1.2'
+        'prereg-batchjob-service': 'mosipdev/pre-registration-batchjob:1.1.1'
       document:
-        'prereg-document-service': 'mosipdev/pre-registration-document-service:1.1.2'
+        'prereg-document-service': 'mosipdev/pre-registration-document-service:1.1.1'
       transliteration:
-        'prereg-transliteration-service': 'mosipdev/pre-registration-transliteration-service:1.1.2'
+        'prereg-transliteration-service': 'mosipdev/pre-registration-transliteration-service:1.1.1'
       booking:
-        'prereg-booking-service': 'mosipdev/pre-registration-booking-service:1.1.2'
+        'prereg-booking-service': 'mosipdev/pre-registration-booking-service:1.1.1'
       qrcode:
-        'prereg-qrcode-service': 'mosipdev/pre-registration-qrcode-service:1.1.2'
+        'prereg-qrcode-service': 'mosipdev/pre-registration-qrcode-service:1.1.1'
       datasync:
-        'prereg-datasync-service': 'mosipdev/pre-registration-datasync-service:1.1.2'
+        'prereg-datasync-service': 'mosipdev/pre-registration-datasync-service:1.1.1'
       demographic:
-        'prereg-demographic-service': 'mosipdev/pre-registration-demographic-service:1.1.2'
+        'prereg-demographic-service': 'mosipdev/pre-registration-demographic-service:1.1.1'
       notification:
-        'prereg-notification-service': 'mosipdev/pre-registration-notification-service:1.1.2'
+        'prereg-notification-service': 'mosipdev/pre-registration-notification-service:1.1.1'
       captcha:
-        'prereg-captcha-service': 'mosipdev/pre-registration-captcha-service:1.1.2'
+        'prereg-captcha-service': 'mosipdev/pre-registration-captcha-service:1.1.1'
       ui:
         'prereg-ui': 'mosipdev/pre-registration-ui:1.1.1'
 
     registration:
       client:
-        'reg-client-downloader': 'mosipdev/registration-client:1.1.2'
+        'reg-client-downloader': 'mosipdev/registration-client:1.1.1'
 
     regproc:
       abishandler:
