@@ -18,7 +18,7 @@ versions:
       key:
         'kernel-keymanager-service': 'mosipid/kernel-keymanager-service:1.1.1'
       notifier:
-        'kernel-notification-service': 'wuriguinea/kernel-notification-service:dev'
+        'kernel-notification-service': 'mosipid/kernel-notification-service:1.1.1'
       otp:
         'kernel-otpmanager-service': 'mosipid/kernel-otpmanager-service:1.1.1'
       rid:
