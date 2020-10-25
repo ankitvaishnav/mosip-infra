@@ -38,7 +38,7 @@ versions:
       booking:
         'prereg-booking-service': 'mosipid/pre-registration-booking-service:1.1.1'
       qrcode:
-        'prereg-qrcode-service': 'mosipid/pre-registration-qrcode-service:1.1.1'
+        'prereg-qrcode-service': 'mosipid/pre-registration-generateqrcode-service:1.1.1'
       datasync:
         'prereg-datasync-service': 'mosipid/pre-registration-datasync-service:1.1.1'
       demographic:
