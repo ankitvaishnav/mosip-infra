@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Values.services.login.serviceName }} 
-  namespace: {{ .Values.namespace }} 
+  namespace: {{ .Release.namespace }}
 spec:
   ports:
   - port: {{ .Values.services.login.servicePort }}
