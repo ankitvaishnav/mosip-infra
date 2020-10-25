@@ -48,7 +48,7 @@ versions:
       captcha:
         'prereg-captcha-service': 'mosipid/pre-registration-captcha-service:1.1.1'
       ui:
-        'prereg-ui': 'mosipid/pre-registration-ui:1.1.1'
+        'prereg-ui': 'wuriguinea/pre-registration-ui:dev'
 
     registration:
       client:
