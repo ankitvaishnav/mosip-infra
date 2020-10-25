@@ -24,7 +24,8 @@ spec:
         app: {{ .Values.services.demographic.serviceName }}
         component: {{ .Values.component }}
     spec:
-      {{- include "dockerHubSecret" .  | indent 6}}
+      imagePullSecrets:
+      - name: pvt-reg-cred1
       containers:
         - name: {{ .Values.services.demographic.serviceName }}
           image: {{ .Values.services.demographic.dockerImage }}:{{ .Values.services.demographic.dockerTag }}

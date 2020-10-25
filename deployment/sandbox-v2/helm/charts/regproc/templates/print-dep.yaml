@@ -23,7 +23,8 @@ spec:
         app: {{ .Values.services.print.serviceName }} 
         component: service-hazelcast-server
     spec:
-      {{- include "dockerHubSecret" .  | indent 6}}
+      imagePullSecrets:
+      - name: pvt-reg-cred1
       containers:
       - name: {{ .Values.services.print.serviceName }} 
         image: {{ .Values.services.print.dockerImage }}

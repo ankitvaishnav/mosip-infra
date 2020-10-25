@@ -24,7 +24,8 @@ spec:
         app: {{ .Values.services.notifier.serviceName }} 
         component: {{ .Values.component }} 
     spec:
-      {{- include "dockerHubSecret" .  | indent 6}}
+      imagePullSecrets:
+      - name: pvt-reg-cred1
       containers:
       - name: {{ .Values.services.notifier.serviceName }} 
         image: {{ .Values.services.notifier.dockerImage }}
