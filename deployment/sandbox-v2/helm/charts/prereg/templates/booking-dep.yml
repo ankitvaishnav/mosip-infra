@@ -41,7 +41,7 @@ spec:
             - name: is_glowroot_env
               value: {{ .Values.isGlowroot }}
           ports:
-            - containerPort: {{ .Values.services.booking.containerPort }}
+          - containerPort: {{ .Values.services.booking.containerPort }}
 
           {{- include "logger.mount" .  | indent 8}}
 
