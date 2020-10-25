@@ -27,7 +27,7 @@ spec:
       {{- include "dockerHubSecret" .  | indent 6}}
       containers:
         - name: {{ .Values.services.transliteration.serviceName }}
-          image: {{ .Values.services.transliteration.dockerImage }}:{{ .Values.services.transliteration.dockerTag }}
+          image: {{ .Values.services.transliteration.dockerImage }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           env:
             - name: active_profile_env

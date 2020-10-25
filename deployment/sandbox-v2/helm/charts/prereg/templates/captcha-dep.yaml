@@ -24,10 +24,9 @@ spec:
         app: {{ .Values.services.captcha.serviceName }}
         component: {{ .Values.component }}
     spec:
-      {{- include "dockerHubSecret" .  | indent 6}}
       containers:
         - name: {{ .Values.services.captcha.serviceName }}
-          image: {{ .Values.services.captcha.dockerImage }}:{{ .Values.services.captcha.dockerTag }}
+          image: {{ .Values.services.captcha.dockerImage }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           env:
             - name: active_profile_env
@@ -42,9 +41,6 @@ spec:
               value: {{ .Values.isGlowroot }}
           ports:
             - containerPort: {{ .Values.services.captcha.containerPort }}
-
-          {{- include "logger.mount" .  | indent 8}}
-
           readinessProbe:  #TODO: Since no actuator, we watch tcp port. Is there an actuator?
             tcpSocket:
               port: {{ .Values.services.captcha.containerPort }}
@@ -55,6 +51,3 @@ spec:
       #         port: {{ .Values.services.captcha.containerPort }}
       #       initialDelaySeconds: {{ .Values.probe.initialDelay }}
       #       periodSeconds: {{ .Values.probe.period }}
-      {{- include "logger.sidecar" .  | indent 6}}
-
-      {{- include "logger.volume" .  | indent 6}}

@@ -27,7 +27,7 @@ spec:
       {{- include "dockerHubSecret" .  | indent 6}}
       containers:
         - name: {{ .Values.services.qrcode.serviceName }}
-          image: {{ .Values.services.qrcode.dockerImage }}:{{ .Values.services.qrcode.dockerTag }}
+          image: {{ .Values.services.qrcode.dockerImage }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           env:
             - name: active_profile_env
