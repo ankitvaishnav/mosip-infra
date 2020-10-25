@@ -24,7 +24,7 @@ spec:
       {{- include "dockerHubSecret" .  | indent 6}}
       containers:
       - name: {{ .Values.services.biosvc.serviceName }} 
-        image: {{ .Values.services.biosvc.dockerImage }}:{{ .Values.services.biosvc.dockerTag }} 
+        image: {{ .Values.services.biosvc.dockerImage }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         env:
         - name: active_profile_env

@@ -56,29 +56,29 @@ versions:
 
     regproc:
       abishandler:
-        'regproc-abis-handler-stage': 'mosipdev/registration-processor-abis-handler-stage:1.1.1'
+        'regproc-abis-handler-stage': 'mosipid/registration-processor-abis-handler-stage:1.1.1'
       abismid:
-        'regproc-abis-middleware-stage': 'mosipdev/registration-processor-abis-middleware-stage:1.1.1'
+        'regproc-abis-middleware-stage': 'mosipid/registration-processor-abis-middleware-stage:1.1.1'
       bio:
-        'regproc-bio-dedupe-stage': 'mosipdev/registration-processor-bio-dedupe-stage:1.1.1'
+        'regproc-bio-dedupe-stage': 'mosipid/registration-processor-bio-dedupe-stage:1.1.1'
       bioauth:
-        'regproc-biometric-authentication-stage': 'mosipdev/registration-processor-biometric-authentication-stage:1.1.1'
+        'regproc-biometric-authentication-stage': 'mosipid/registration-processor-biometric-authentication-stage:1.1.1'
       biosvc:
-        'regproc-bio-dedupe-service': 'mosipdev/registration-processor-bio-dedupe-service:1.1.1'
+        'regproc-bio-dedupe-service': 'mosipid/registration-processor-bio-dedupe-service:1.1.1'
       camel:
-        'regproc-camel-stage': 'mosipdev/registration-processor-common-camel-bridge:1.1.1'
+        'regproc-camel-stage': 'mosipid/registration-processor-common-camel-bridge:1.1.1'
       demo:
-        'regproc-demo-dedupe-stage': 'mosipdev/registration-processor-demo-dedupe-stage:1.1.1'
+        'regproc-demo-dedupe-stage': 'mosipid/registration-processor-demo-dedupe-stage:1.1.1'
       eis:
-        'regproc-external-integration-service': 'mosipdev/registration-processor-external-integration-service:1.1.1'
+        'regproc-external-integration-service': 'mosipid/registration-processor-external-integration-service:1.1.1'
       external:
-        'regproc-external-stage': 'mosipdev/registration-processor-external-stage:1.1.1'
+        'regproc-external-stage': 'mosipid/registration-processor-external-stage:1.1.1'
       manual:
-        'regproc-manual-verification-stage': 'mosipdev/registration-processor-manual-verification-stage:1.1.1'
+        'regproc-manual-verification-stage': 'mosipid/registration-processor-manual-verification-stage:1.1.1'
       msg:
         'regproc-message-sender-stage': 'wuriguinea/registration-processor-message-sender-stage:dev'
       notification:
-        'regproc-securezone-notification-stage': 'mosipdev/registration-processor-securezone-notification-stage:1.1.1'
+        'regproc-securezone-notification-stage': 'mosipid/registration-processor-securezone-notification-stage:1.1.1'
       osi:
         'regproc-osi-validator-stage': 'wuriguinea/registration-processor-osi-validator-stage:1.1.1'
       print:
@@ -86,19 +86,19 @@ versions:
       printsvc:
         'regproc-printing-service': 'wuriguinea/registration-processor-printing-service:dev'
       proxyabis:
-        'regproc-proxy-abis': 'mosipdev/registration-processor-abis:1.1.1'
+        'regproc-proxy-abis': 'mosipid/registration-processor-abis:1.1.1'
       quality:
-        'regproc-quality-checker-stage': 'mosipdev/registration-processor-quality-checker-stage:1.1.1'
+        'regproc-quality-checker-stage': 'mosipid/registration-processor-quality-checker-stage:1.1.1'
       request:
-        'regproc-request-handler-service': 'mosipdev/registration-processor-request-handler-service:1.1.1'
+        'regproc-request-handler-service': 'mosipid/registration-processor-request-handler-service:1.1.1'
       trans:
-        'regproc-registration-transaction-service': 'mosipdev/registration-processor-registration-transaction-service:1.1.1'
+        'regproc-registration-transaction-service': 'mosipid/registration-processor-registration-transaction-service:1.1.1'
       uin:
-        'regproc-uin-generator-stage': 'mosipdev/registration-processor-uin-generator-stage:1.1.1'
+        'regproc-uin-generator-stage': 'mosipid/registration-processor-uin-generator-stage:1.1.1'
       uploader:
-        'regproc-packet-uploader-stage': 'mosipdev/registration-processor-packet-uploader-stage:1.1.1'
+        'regproc-packet-uploader-stage': 'mosipid/registration-processor-packet-uploader-stage:1.1.1'
       validator:
-        'regproc-packet-validator-stage': 'mosipdev/registration-processor-packet-validator-stage:1.1.1'
+        'regproc-packet-validator-stage': 'mosipid/registration-processor-packet-validator-stage:1.1.1'
     #      reprocess:
     #        'regproc-reprocessor-stage': 'mosipdev/registration-processor-reprocessor-stage:1.1.1'
 
