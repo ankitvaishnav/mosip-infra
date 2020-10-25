@@ -30,7 +30,7 @@ versions:
       login:
         'prereg-login-service': 'mosipid/pre-registration-login-service:1.1.1'
       batch:
-        'prereg-batchjob-service': 'wuriguinea/pre-registration-batchjob:dev'
+        'prereg-batchjob-service': 'mosipid/pre-registration-batchjob:1.1.1'
       document:
         'prereg-document-service': 'mosipid/pre-registration-document-service:1.1.1'
       transliteration:
