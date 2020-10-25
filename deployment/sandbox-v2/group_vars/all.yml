@@ -165,9 +165,9 @@ reg_client:
 
 repos:
   commons:
-    src: https://github.com/mosip/commons 
+    src: https://github.com/WuriGuinea/mosip-guinea-ref-impl
     dest: '{{tmp_dir}}/commons'
-    tag: 1.1.1
+    tag: dev
   prereg:
     src: https://github.com/mosip/pre-registration
     dest: '{{tmp_dir}}/pre-registration'
@@ -274,8 +274,8 @@ config_repo:
   # If local_git_repo=true, a copy of git repo at `git_repo_uri` gets created on console machine and 
   # config server points to the same. Any changes done on local repo and will not  get reflected in 
   # the parent git repo.
-  git_repo_uri: https://github.com/mosip/mosip-config
-  branch: 1.1.1
+  git_repo_uri: https://github.com/ankitvaishnav/mosip-config.git
+  branch: 1.1.2_guinea
   private: false
   username: githubusername # Applicable only if private=true. Password is expected to be in vaulted secrets.yml 
   search_folders: sandbox # Subdir in repo containing properties
