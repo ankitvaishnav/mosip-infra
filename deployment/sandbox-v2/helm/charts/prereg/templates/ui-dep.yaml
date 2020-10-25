@@ -20,7 +20,8 @@ spec:
       labels:
         app: {{.Values.services.ui.serviceName}}
     spec:
-      {{- include "dockerHubSecret" .  | indent 6}}
+      imagePullSecrets:
+      - name: pvt-reg-cred1
       containers:
       - name: {{.Values.services.ui.serviceName}}
         image: {{ .Values.services.ui.dockerImage }}
