@@ -43,7 +43,7 @@ spec:
           ports:
           - containerPort: {{ .Values.services.booking.containerPort }}
 
-          {{- include "logger.mount" .  | indent 8}}
+        {{- include "logger.mount" .  | indent 8}}
 
           readinessProbe:  #TODO: Since no actuator, we watch tcp port. Is there an actuator?
             tcpSocket:
