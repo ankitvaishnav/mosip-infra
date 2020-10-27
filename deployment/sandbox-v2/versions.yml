@@ -126,17 +126,17 @@ versions:
 
     idrepo:
       identity:
-        'idrepo-identity-service': 'mosipdev/id-repository-identity-service:1.1.2'
+        'idrepo-identity-service': 'mosipid/id-repository-identity-service:1.1.1'
       vid:
-        'idrepo-vid-service': 'mosipdev/id-repository-vid-service:1.1.2'
-      bioextractor:
-        'idrepo-bioextractor-service': 'mosipdev/bioextractor-service:1.1.2'
-      credentialreq:
-        'idrepo-credential-request-generator': 'mosipdev/credential-request-generator:1.1.2'
-      credentialservice:
-        'idrepo-credential-service': 'mosipdev/credential-service:1.1.2'
-      salt:
-        'idrepo-salt-generator': 'mosipdev/id-repository-salt-generator:1.1.2'
+        'idrepo-vid-service': 'mosipid/id-repository-vid-service:1.1.1'
+      uinhash:
+        'idrepo-uin-hash-generator': 'mosipid/kernel-salt-generator:1.1.1'
+      uinencrypt:
+        'idrepo-uin-encrypt-generator': 'mosipid/kernel-salt-generator:1.1.1'
+      vidhash:
+        'idrepo-vid-hash-generator': 'mosipid/kernel-salt-generator:1.1.1'
+      videncrypt:
+        'idrepo-vid-encrypt-generator': 'mosipid/kernel-salt-generator:1.1.1'
 
     pms:
       misp:
