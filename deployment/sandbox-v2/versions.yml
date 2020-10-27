@@ -84,7 +84,7 @@ versions:
       print:
         'regproc-printing-stage': 'wuriguinea/registration-processor-printing-stage:dev'
       printsvc:
-        'regproc-printing-service': 'wuriguinea/registration-processor-printing-service:dev'
+        'regproc-print-service': 'wuriguinea/registration-processor-print-service:dev'
       proxyabis:
         'regproc-proxy-abis': 'mosipid/registration-processor-abis:1.1.1'
       quality:
