@@ -114,15 +114,19 @@ versions:
 
     ida:
       auth:
-        'ida-auth-service': 'mosipdev/authentication-service:1.1.2'
+        'ida-auth-service': 'mosipid/authentication-service:1.1.1'
       internal:
-        'ida-internal-service': 'mosipdev/authentication-internal-service:1.1.2'
+        'ida-internal-service': 'mosipid/authentication-internal-service:1.1.1'
       kyc:
-        'ida-kyc-service': 'mosipdev/authentication-kyc-service:1.1.2'
+        'ida-kyc-service': 'mosipid/authentication-kyc-service:1.1.1'
       otp:
-        'ida-otp-service': 'mosipdev/authentication-otp-service:1.1.2'
-#      keygen:
-#        'ida-key-generator': 'mosipdev/keys-generator:1.1.2'
+        'ida-otp-service': 'mosipid/authentication-otp-service:1.1.1'
+      keygen:
+        'ida-key-generator': 'mosipid/authentication-keys-generator:1.1.1'
+      hashsalt:
+        'ida-hash-salt-generator': 'mosipid/kernel-salt-generator:1.1.1'
+      encryptsalt:
+        'ida-encrypt-salt-generator': 'mosipid/kernel-salt-generator:1.1.1'
 
     idrepo:
       identity:
