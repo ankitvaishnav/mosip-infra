@@ -34,7 +34,7 @@ services:
       containerPort: 9071
     ingressPath: ''
     healthUrl: /registrationprocessor/v1/abishandler/actuator/health
-  abismid:
+{#  abismid:
     serviceName: {{ versions.services.regproc.abismid.keys()[0] }}
     dockerImage: {{ versions.services.regproc.abismid.values()[0] }}
     ports:
@@ -220,3 +220,4 @@ services:
       servicePort: 80
     ingressPath: /registrationprocessor/v1/requesthandler/
     healthUrl: /registrationprocessor/v1/requesthandler/actuator/health
+#}
