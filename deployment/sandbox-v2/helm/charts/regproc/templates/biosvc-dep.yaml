@@ -40,10 +40,6 @@ spec:
         - name: mosipbox_public_url
           value: {{ .Values.sitePublicUrl }}
         ports:
-        - name: eventbus-port
-          containerPort: {{ .Values.services.biosvc.ports.eventbusPort }}
-        - name: hazelcast-port
-          containerPort: {{ .Values.services.biosvc.ports.hazelcastPort }}
         - name: verticle-port
           containerPort: {{ .Values.services.biosvc.ports.containerPort }}
 
