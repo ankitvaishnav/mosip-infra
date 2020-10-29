@@ -104,23 +104,23 @@ versions:
 
     dmzregproc:
       receiver:
-        'regproc-packet-receiver-stage': 'mosipdev/registration-processor-packet-receiver-stage:1.1.1'
+        'regproc-packet-receiver-stage': 'mosipid/registration-processor-packet-receiver-stage:1.1.1'
       camel:
-        'regproc-camel-stage': 'mosipdev/registration-processor-common-camel-bridge:1.1.1'
+        'regproc-camel-stage': 'mosipid/registration-processor-common-camel-bridge:1.1.1'
       status:
-        'regproc-registration-status-service': 'mosipdev/registration-processor-registration-status-service:1.1.1'
+        'regproc-registration-status-service': 'mosipid/registration-processor-registration-status-service:1.1.1'
       pktserver:
-        'regproc-dmz-packet-server': 'mosipdev/registration-processor-dmz-packet-server:1.0.9'
+        'regproc-dmz-packet-server': 'mosipid/registration-processor-dmz-packet-server:1.0.9'
 
     ida:
       auth:
-        'ida-auth-service': 'mosipid/authentication-service:1.1.1'
+        'ida-auth-service': 'wuriguinea/authentication-service-tech5-softhsmclient:1.0.10-rc1'
       internal:
-        'ida-internal-service': 'mosipid/authentication-internal-service:1.1.1'
+        'ida-internal-service': 'wuriguinea/authentication-internal-service-tech5-softhsmclient:1.0.10-rc1'
       kyc:
-        'ida-kyc-service': 'mosipid/authentication-kyc-service:1.1.1'
+        'ida-kyc-service': 'wuriguinea/authentication-kyc-service-tech5-softhsmclient:1.0.10-rc1'
       otp:
-        'ida-otp-service': 'mosipid/authentication-otp-service:1.1.1'
+        'ida-otp-service': 'wuriguinea/authentication-otp-service-softhsmclient:1.0.10-rc1'
       keygen:
         'ida-key-generator': 'mosipid/authentication-keys-generator:1.1.1'
       hashsalt:
