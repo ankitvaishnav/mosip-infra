@@ -23,8 +23,8 @@ versions:
         'kernel-otpmanager-service': 'mosipid/kernel-otpmanager-service:1.1.1'
       rid:
         'kernel-ridgenerator-service': 'mosipid/kernel-ridgenerator-service:1.1.1'
-    #      keygen:
-    #        'kernel-keys-generator': 'mosipdev/keys-generator:1.1.2'
+      keygen:
+        'kernel-keys-generator': 'mosipdev/keys-generator:1.1.2'
 
     prereg:
       login:
