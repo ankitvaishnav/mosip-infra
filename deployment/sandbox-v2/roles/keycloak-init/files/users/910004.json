@@ -1,0 +1,18 @@
+{
+    "username": "910004",
+    "enabled": true,
+    "email": "Hadja.cherif@wuriguinee.co",
+    "emailVerified": false,
+    "firstName": "Hadja",
+    "lastName": "",
+    "credentials": [
+        {
+            "type": "password",
+            "value": "mosip",
+            "temporary": false
+        }
+    ],
+    "attributes": {
+      "userPassword": "e1NTSEEyNTZ9ZDZYWXY3ZExCeXlKNWMxb0tZM3BDSklSYlovK2dEQlRZa2JVaGp0YUpVU1dzTWZNZGtablRBPT0="
+    }
+}

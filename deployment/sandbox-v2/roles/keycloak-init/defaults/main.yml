@@ -94,6 +94,16 @@ keycloak_mosip_users: # Assumption "username.json" exists with same username ins
   - {realm_id: 'mosip', user_file: 'users/110010.json'}
   - {realm_id: 'mosip', user_file: 'users/110011.json'}
   - {realm_id: 'mosip', user_file: 'users/110012.json'}
+  - {realm_id: 'mosip', user_file: 'users/lisbon.json'}
+  - {realm_id: 'mosip', user_file: 'users/madrid.json'}
+  - {realm_id: 'mosip', user_file: 'users/berlin.json'}
+  - {realm_id: 'mosip', user_file: 'users/910001.json'}
+  - {realm_id: 'mosip', user_file: 'users/910002.json'}
+  - {realm_id: 'mosip', user_file: 'users/910003.json'}
+  - {realm_id: 'mosip', user_file: 'users/910004.json'}
+  - {realm_id: 'mosip', user_file: 'users/910005.json'}
+  - {realm_id: 'mosip', user_file: 'users/910006.json'}
+  - {realm_id: 'mosip', user_file: 'users/910007.json'}
   
 
 keycloak_mosip_user_role_map:  
@@ -324,6 +334,56 @@ keycloak_mosip_user_role_map:
   - {realm_id: 'mosip', username: 'pm_testuser', role_name: 'PARTNER'}
   - {realm_id: 'mosip', username: 'pm_testuser', role_name: 'POLICYMANAGER'}
   - {realm_id: 'mosip', username: 'pm_testuser', role_name: 'PARTNERMANAGER'}
+
+  - {realm_id: 'mosip', username: 'lisbon', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: 'lisbon', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: 'lisbon', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: 'lisbon', role_name: 'REGISTRATION_SUPERVISOR'}
+
+  - {realm_id: 'mosip', username: 'madrid', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: 'madrid', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: 'madrid', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: 'madrid', role_name: 'REGISTRATION_SUPERVISOR'}
+
+  - {realm_id: 'mosip', username: 'berlin', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: 'berlin', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: 'berlin', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: 'berlin', role_name: 'REGISTRATION_SUPERVISOR'}
+
+  - {realm_id: 'mosip', username: '910001', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: '910001', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: '910001', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: '910001', role_name: 'REGISTRATION_SUPERVISOR'}
+
+  - {realm_id: 'mosip', username: '910002', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: '910002', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: '910002', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: '910002', role_name: 'REGISTRATION_SUPERVISOR'}
+
+  - {realm_id: 'mosip', username: '910003', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: '910003', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: '910003', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: '910003', role_name: 'REGISTRATION_SUPERVISOR'}
+
+  - {realm_id: 'mosip', username: '910004', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: '910004', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: '910004', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: '910004', role_name: 'REGISTRATION_SUPERVISOR'}
+
+  - {realm_id: 'mosip', username: '910005', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: '910005', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: '910005', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: '910005', role_name: 'REGISTRATION_SUPERVISOR'}
+
+  - {realm_id: 'mosip', username: '910006', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: '910006', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: '910006', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: '910006', role_name: 'REGISTRATION_SUPERVISOR'}
+
+  - {realm_id: 'mosip', username: '910007', role_name: 'GLOBAL_ADMIN'}
+  - {realm_id: 'mosip', username: '910007', role_name: 'REGISTRATION_ADMIN'}
+  - {realm_id: 'mosip', username: '910007', role_name: 'REGISTRATION_OFFICER'}
+  - {realm_id: 'mosip', username: '910007', role_name: 'REGISTRATION_SUPERVISOR'}
 
     # For service account mappings client name must be prefixed with service-account-
   - {realm_id: 'mosip', username: 'service-account-mosip-prereg-client', role_name: 'INDIVIDUAL'}

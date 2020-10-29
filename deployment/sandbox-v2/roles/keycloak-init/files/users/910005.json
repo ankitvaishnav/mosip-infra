@@ -1,0 +1,18 @@
+{
+    "username": "910005",
+    "enabled": true,
+    "email": "esaidou.keita@wuriguinee.com",
+    "emailVerified": false,
+    "firstName": "Elhadj",
+    "lastName": "",
+    "credentials": [
+        {
+            "type": "password",
+            "value": "mosip",
+            "temporary": false
+        }
+    ],
+    "attributes": {
+      "userPassword": "e1NTSEEyNTZ9ZDZYWXY3ZExCeXlKNWMxb0tZM3BDSklSYlovK2dEQlRZa2JVaGp0YUpVU1dzTWZNZGtablRBPT0="
+    }
+}

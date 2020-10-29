@@ -1,0 +1,19 @@
+{
+    "username": "madrid",
+    "enabled": true,
+    "email": "madrid@mosip.io",
+    "emailVerified": false,
+    "firstName": "Madrid",
+    "lastName": "",
+    "credentials": [
+        {
+            "type": "password",
+            "value": "mosip",
+            "temporary": false
+        }
+    ],
+    "attributes": {
+      "userPassword": "e1NTSEEyNTZ9ZDZYWXY3ZExCeXlKNWMxb0tZM3BDSklSYlovK2dEQlRZa2JVaGp0YUpVU1dzTWZNZGtablRBPT0="
+    }
+}
+
