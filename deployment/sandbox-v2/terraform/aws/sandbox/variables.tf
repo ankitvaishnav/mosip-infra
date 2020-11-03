@@ -1,5 +1,5 @@
 variable "sandbox_name" { //Change this to your sandbox name.
-  default = "hosur"  // This is informational.  A tag will be added with this name.
+  default = "wuri-sandbox"  // This is informational.  A tag will be added with this name.
 }
 
 variable "region" {
