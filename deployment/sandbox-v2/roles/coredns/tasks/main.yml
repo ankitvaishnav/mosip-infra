@@ -16,7 +16,7 @@
 - name: Populate dns db file
   lineinfile:
     path: '{{coredns.db}}'
-    line:  'sb.    IN  SOA dns.sb. admin.sb. 2015082541 7200 3600 315360000 3600'
+    line:  '{{site.sandbox_internal_tld}}.    IN  SOA dns.{{site.sandbox_internal_tld}}. admin.{{site.sandbox_internal_tld}}. 2015082541 7200 3600 315360000 3600'
 
 - name: Populate dns db file
   lineinfile:
@@ -25,17 +25,22 @@
   with_inventory_hostnames:
     - all
 
+- name: Populate aliases dns db file
+  lineinfile:
+    path: '{{coredns.db}}'
+    line: '{{item.value.alias}}.   IN   CNAME {{ item.value.node.split(".")[0:-1] | join("") }}' # Remove the TLD suffix
+  loop: "{{lookup('dict', coredns.aliases)}}"
+
 - name: Copy Corefile
-  copy:
-    src: '{{install_root}}/roles/coredns/files/Corefile'
-    dest: '{{coredns.path}}'
+  template:
+    src: Corefile.j2
+    dest: '{{coredns.path}}/Corefile'
 
 - name: Delete running container
-  docker_container:
-    name: '{{coredns.name}}'
-    state: absent
+  shell: 'docker rm -f {{coredns.name}}'
   become: yes
-
+  ignore_errors: yes
+     
 - name: Start docker container
   shell: 'docker run -d --name {{coredns.name}} --restart=always --volume={{coredns.path}}:/root/ -p 53:53/udp {{coredns.image}} -conf /root/Corefile'
   become: yes

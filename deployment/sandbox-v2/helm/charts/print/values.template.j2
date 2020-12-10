@@ -1,7 +1,7 @@
 component: print
 part-of: mosip
 activeProfileEnv: mz 
-springConfigLabel:  {{ config_repo.branch }}
+springConfigLabel:  {{ config_repo.version }}
 configServerUrl: {{ config_server.internal_url }}
 artifactoryUrl: {{ artifactory_url }} 
 probe:
@@ -23,3 +23,4 @@ services:
     servicePort: 80
     ingressPath: /v1/print
     healthUrl: /v1/print/actuator/health
+    podconfig: {{ podconfig.print.service | to_yaml }}

@@ -20,4 +20,10 @@ As part of sandbox installation a default dashboard is installed to view logs of
    * `https://<sandbox domain name>/grafana`
 
 * Recommended charts:
-  * 11074
+  * 11074 (for node level stats)
+  * 4784 (for container level stats)
+
+## Admin
+
+Open MOSIP Admin portal from sandbox home page. Login with `superadmin`, password `mosip`.
+

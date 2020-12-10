@@ -5,23 +5,23 @@ metadata:
   namespace: {{ .Release.Namespace }} 
   labels:
     app: {{ .Values.services.receiver.serviceName }}
-    
 spec:
-  replicas: 1
+  replicas: {{ .Values.services.receiver.podconfig.replicas }}
   selector:
     matchLabels:
       app: {{ .Values.services.receiver.serviceName }} 
-  minReadySeconds: 10
+  minReadySeconds: {{ .Values.services.receiver.podconfig.minReadySeconds }}
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1 
+      maxUnavailable: {{ .Values.services.receiver.podconfig.maxUnavailable }}
+      maxSurge: {{ .Values.services.receiver.podconfig.maxSurge }}
   template:
     metadata:
       labels:
         app: {{ .Values.services.receiver.serviceName }} 
         component: service-hazelcast-server
+        exportLogs: {{ .Values.exportLogs }}
     spec:
       {{- include "dockerHubSecret" .  | indent 6}}
       containers:
