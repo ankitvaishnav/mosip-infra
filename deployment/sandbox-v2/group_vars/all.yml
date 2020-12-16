@@ -4,7 +4,7 @@
 #
 user_home: '{{lookup("env", "HOME")}}'
 install_root: '{{user_home}}/mosip-infra/deployment/sandbox-v2'
-tmp_dir: '{{install_root}}/tmp/'
+tmp_dir: '{{install_root}}/tmp'
 logs_dir: '{{tmp_dir}}/logs'
 charts_root: '{{install_root}}/helm/charts'  # Helm charts root
 helm_cli_path: '{{user_home}}/bin'  # This path chosen as it is included in default $PATH in Centos 7.7
@@ -12,7 +12,7 @@ artifactory_url: http://artifactory-service/
 versions_file: '{{install_root}}/versions.yml' 
 podconfig_file: '{{install_root}}/podconfig.yml'
 
-sandbox_domain_name: minibox.mosip.net
+sandbox_domain_name: trex.mosadro.com
 site:
   sandbox_public_url: 'https://{{sandbox_domain_name}}'  # The public url needs to point to nginx on console
   sandbox_internal_url: 'https://{{inventory_hostname}}'  # Pointing to nginx which runs on console
