@@ -1,119 +1,121 @@
 { "identity" : {
   "biometrics" : {
     "applicant" : {
-      "leftEye" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "7a05daa4-a2d7-4c45-a759-bc3cc944eec0"
-      },
-      "rightIndex" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "46ca78f1-3fd8-4bab-8bb3-e89c353c52a7"
-      },
-      "rightLittle" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "a6b972b8-f80f-4609-937a-414b293b7a40"
-      },
-      "leftLittle" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "c4beac25-fd07-4717-b458-8578abd16256"
-      },
-      "leftIndex" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "52ee5e43-9beb-4fb1-afea-f92c0abb093d"
-      },
       "face" : {
         "numRetry" : 1,
         "forceCaptured" : false,
-        "BIRIndex" : "83b328aa-7ffa-43df-9554-186085387182"
-      },
-      "rightEye" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "98f72ec6-1989-4440-bf7a-3495b55a3c2a"
-      },
-      "rightThumb" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "07f041fc-0045-484a-bcb1-0618f4e28e41"
-      },
-      "rightRing" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "0e9022f3-733b-44f3-a7bf-5c08f37fd2ac"
-      },
-      "rightMiddle" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "d7415eb7-875a-42d1-8924-95c15647e9a3"
-      },
-      "leftRing" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "917ec6f4-fb64-4c21-9a34-723e53c3f861"
-      },
-      "leftThumb" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "9b9d0f9e-8c55-4f95-ac0c-5caf3341b39a"
-      },
-      "leftMiddle" : {
-        "numRetry" : 1,
-        "forceCaptured" : false,
-        "BIRIndex" : "5eef3463-a565-4aa5-86ef-8932f330d16c"
+        "BIRIndex" : "6224716b-91ce-4332-92dc-31ee66551eea"
       }
     }
   },
-  "exceptionBiometrics" : [ ],
-  "documents" : [ {
-    "documentName" : "proofOfAddress",
-    "documentCategory" : "POA",
-    "documentOwner" : "Applicant",
-    "documentType" : "RNC"
+  "exceptionBiometrics" : [ {
+    "type" : "Iris",
+    "missingBiometric" : "leftEye",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
   }, {
-    "documentName" : "proofOfIdentity",
-    "documentCategory" : "POI",
-    "documentOwner" : "Applicant",
-    "documentType" : "CIN"
+    "type" : "Iris",
+    "missingBiometric" : "rightEye",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "leftIndex",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "leftRing",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "leftLittle",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "leftMiddle",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "rightIndex",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "rightRing",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "rightMiddle",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "rightLittle",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "rightThumb",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
+  }, {
+    "type" : "Finger",
+    "missingBiometric" : "leftThumb",
+    "reason" : "Temporary",
+    "exceptionType" : "Temporary",
+    "individualType" : "applicant"
   } ],
+  "documents" : [ ],
   "metaData" : [ {
     "label" : "registrationId",
-    "value" : "{{rid}}"
+    "value" : "10001910030000120201127131847"
   }, {
     "label" : "creationDate",
-    "value" : "{{creation_date}}"
+    "value" : "2020-11-27T13:23:19.771Z"
   }, {
     "label" : "Registration Client Version Number",
-    "value" : "1.0.10-SNAPSHOT"
+    "value" : "1.1.1"
   }, {
     "label" : "registrationType",
     "value" : "New"
   }, {
     "label" : "preRegistrationId",
-    "value" : "{{prereg_id}}"
+    "value" : null
   }, {
     "label" : "machineId",
-    "value" : "{{machine_id}}"
+    "value" : "91003"
   }, {
     "label" : "centerId",
-    "value" : "{{center_id}}"
+    "value" : "10001"
   }, {
     "label" : "dongleId",
-    "value" : "FB5962911685"
+    "value" : null
   }, {
     "label" : "keyIndex",
-    "value" : "49:40:22:0D:2B:CE:93:5D:7D:ED:CD:40:42:D1:10:7F:C7:31:9E:36:FF:22:47:F1:15:D4:A9:76:E8:F1:9D:DC"
+    "value" : "F8:B8:C7:47:0B:0F:83:98:5E:E4:CA:DD:07:98:6B:1E:98:A7:E7:0E:F2:F5:FD:F9:28:3B:4B:CB:17:49:F0:BA"
   }, {
     "label" : "consentOfApplicant",
-    "value" : "Yes"
+    "value" : null
   } ],
   "operationsData" : [ {
     "label" : "officerId",
-    "value" : "{{officer_id}}"
+    "value" : "910003"
   }, {
     "label" : "officerBiometricFileName",
     "value" : null
@@ -147,59 +149,33 @@
     "value" : [ "individualBiometrics_bio_CBEFF" ]
   }, {
     "label" : "demographicSequence",
-    "value" : [ "proofOfAddress", "proofOfIdentity", "ID" ]
+    "value" : [ "ID" ]
   } ],
   "hashSequence2" : [ {
     "label" : "otherFiles",
     "value" : [ "audit" ]
   } ],
   "capturedRegisteredDevices" : [ {
-    "deviceCode" : "bc808b02-1a7d-4a5d-848f-1aa8590ca6ef",
+    "deviceCode" : "1e4a76fb-dffd-4b90-91ea-2cfc90896428",
     "deviceServiceVersion" : "SB.WIN.001",
     "digitalId" : {
-      "serialNo" : "9149869",
-      "make" : "EYEWORKS",
-      "model" : "TCP822",
-      "type" : "Iris",
-      "subType" : "Double",
-      "deviceProviderId" : "XYZMetricsId",
-      "deviceProvider" : "XYZMetrics",
-      "dateTime" : "{{date_time}}"
-    }
-  }, {
-    "deviceCode" : "e799e621-6ce5-468e-b442-886430955f5d",
-    "deviceServiceVersion" : "SB.WIN.001",
-    "digitalId" : {
-      "serialNo" : "C8R1CP15256",
-      "make" : "SB",
-      "model" : "FRO900",
-      "type" : "Finger",
-      "subType" : "Slab",
-      "deviceProviderId" : "XYZMetricsId",
-      "deviceProvider" : "XYZMetrics",
-      "dateTime" : "{{date_time}}"
-    }
-  }, {
-    "deviceCode" : "79847aec-c87c-4692-9ae9-43ba203a3411",
-    "deviceServiceVersion" : "SB.WIN.001",
-    "digitalId" : {
-      "serialNo" : "535626446",
-      "make" : "Megatech",
-      "model" : "C815",
+      "serialNo" : "403316652",
+      "make" : "Logitech",
+      "model" : "C615",
       "type" : "Face",
-      "subType" : "Full face",
-      "deviceProviderId" : "XYZMetricsId",
-      "deviceProvider" : "XYZMetrics",
-      "dateTime" : "{{date_time}}"
+      "deviceSubType" : "Full face",
+      "deviceProviderId" : "SYNCBYTE.LTC165",
+      "deviceProvider" : "SYNCBYTE",
+      "dateTime" : "2020-11-27T13:14:17.207+00:00"
     }
   } ],
   "capturedNonRegisteredDevices" : null,
   "checkSum" : [ {
     "label" : "mosip-client.jar",
-    "value" : "6FD08BDFAA51D73F80748F38670403AD797BA405819395380F634AF0AE5174BE"
+    "value" : "AB73E046FF78DC5AD9C18DF0AB6E85F04C01D1AA74002F0DAA437CCF9E6A8053"
   }, {
     "label" : "mosip-services.jar",
-    "value" : "5230846965145C0577AF779DC11A6BA557A781DCBCA824F28E1817CA08061EB5"
+    "value" : "3F46C816012A6BDB4432606C0037CE4740F8F495EE1B742D60B5E80CCA2E1819"
   } ],
   "printingName" : [ ]
 } } 

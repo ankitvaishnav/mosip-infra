@@ -1,93 +1,47 @@
 { "identity" : {
-  "proofOfAddress" : {
-    "value" : "proofOfAddress",
-    "type" : "RNC",
-    "format" : "pdf"
-  },
+  "lastName" : [ {
+    "language" : "fra",
+    "value" : "GOUMOU"
+  } ],
   "gender" : [ {
-    "language" : "eng",
-    "value" : "Male"
-  }, {
-    "language" : "ara",
-    "value" : "الذكر"
+    "language" : "fra",
+    "value" : "HOMME"
   } ],
-  "city" : [ {
-    "language" : "eng",
-    "value" : "{{city}}"
-  }, {
-    "language" : "ara",
-    "value" : "القنيطرة"
+  "prefecture" : [ {
+    "language" : "fra",
+    "value" : "DALABA"
   } ],
-  "postalCode" : "14022",
-  "fullName" : [ {
-    "language" : "eng",
-    "value" : "Jejang"
-  }, {
-    "language" : "ara",
-    "value" : "Jejang"
+  "subPrefectureOrCommune" : [ {
+    "language" : "fra",
+    "value" : "CU-DALABA"
   } ],
-  "dateOfBirth" : "2000/07/07",
-  "referenceIdentityNumber" : "54656654546565",
+  "dateOfBirth" : "1997/01/01",
   "individualBiometrics" : {
     "format" : "cbeff",
     "version" : 1.0,
     "value" : "individualBiometrics_bio_CBEFF"
   },
-  "proofOfIdentity" : {
-    "value" : "proofOfIdentity",
-    "type" : "CIN",
-    "format" : "pdf"
-  },
-  "IDSchemaVersion" : {{id_schema}},
-  "province" : [ {
-    "language" : "eng",
-    "value" : "{{province}}"
-  }, {
-    "language" : "ara",
-    "value" : "القنيطرة"
+  "firstName" : [ {
+    "language" : "fra",
+    "value" : "NATHAN KOIU"
   } ],
-  "zone" : [ {
-    "language" : "eng",
-    "value" : "{{zone}}"
-  }, {
-    "language" : "ara",
-    "value" : "بن منصور"
-  } ],
-  "phone" : "7259791857",
-  "addressLine1" : [ {
-    "language" : "eng",
-    "value" : "HSR Conlony"
-  }, {
-    "language" : "ara",
-    "value" : "هسر كُنلُني"
-  } ],
-  "addressLine2" : [ {
-    "language" : "eng",
-    "value" : "SECTOR-2"
-  }, {
-    "language" : "ara",
-    "value" : "سِكتُر-٢"
+  "IDSchemaVersion" : 1.0,
+  "phone" : "621989848",
+  "district" : [ {
+    "language" : "fra",
+    "value" : "DALABA MISSIDE"
   } ],
   "residenceStatus" : [ {
-    "language" : "eng",
-    "value" : "Foreigner"
-  }, {
-    "language" : "ara",
-    "value" : "أجنبي"
-  } ],
-  "addressLine3" : [ {
-    "language" : "eng",
-    "value" : "HSRR"
-  }, {
-    "language" : "ara",
-    "value" : "هسرر"
+    "language" : "fra",
+    "value" : "GUINEENNE"
   } ],
   "region" : [ {
-    "language" : "eng",
-    "value" : "{{region}}"
-  }, {
-    "language" : "ara",
-    "value" : "جهة الرباط سلا القنيطرة"
+    "language" : "fra",
+    "value" : "MAMOU"
   } ],
-  "email" : "xyz@xyz-tech.com"
+  "sector" : [ {
+    "language" : "fra",
+    "value" : "DOUNKIMAGNA"
+  } ],
+  "email" : "WURITEACHTEAM@GMAIL.COM"
 } } 
