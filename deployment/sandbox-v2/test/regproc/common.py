@@ -6,29 +6,31 @@ import base64
 import os
 import shutil
 
+
 class MosipSession:
     def __init__(self, server, user, password):
         self.server = server
         self.user = user
         self.password = password
+        self.ssl_verify = False
         self.appid = 'REGISTRATION'  # For internal calls  
-        self.token = self.auth_get_token('regproc', self.user, self.password) 
-      
+        self.token = self.auth_get_token('regproc', self.user, self.password)
+
     def auth_get_token(self, appid, username, password):
         url = 'https://%s/v1/authmanager/authenticate/useridPwd' % self.server
         ts = get_timestamp()
         j = {
             "id": "mosip.io.userId.pwd",
-            "metadata" : {},
-                "version":"1.0",
-                "requesttime": ts,
-                "request": {
-                    "appId" : appid,
-                    "userName": username,
-                    "password": password
+            "metadata": {},
+            "version": "1.0",
+            "requesttime": ts,
+            "request": {
+                "appId": appid,
+                "userName": username,
+                "password": password
             }
         }
-        r = requests.post(url, json = j)
+        r = requests.post(url, json=j, verify=self.ssl_verify)
         token = read_token(r)
         return token
 
@@ -43,30 +45,30 @@ class MosipSession:
         '''
         url = 'https://%s/v1/keymanager/encrypt' % self.server
         j = {
-            "id" : "string",
-            "metadata" : {},
-            "request" : {
-                "applicationId" : appid,
+            "id": "string",
+            "metadata": {},
+            "request": {
+                "applicationId": appid,
                 "data": data,
-                "referenceId" : refid,
-                "timeStamp" :  get_timestamp(),
-                "salt" : None
+                "referenceId": refid,
+                "timeStamp": get_timestamp(),
+                "salt": None
             },
-            "requesttime" : get_timestamp(),
-            "version" : "1.0"
+            "requesttime": get_timestamp(),
+            "version": "1.0"
         }
-        cookies = {'Authorization' : self.token}
-        r = requests.post(url, json = j, cookies=cookies)
-        r = r.content.decode() # to str 
+        cookies = {'Authorization': self.token}
+        r = requests.post(url, json=j, cookies=cookies, verify=self.ssl_verify)
+        r = r.content.decode()  # to str
         r = json.loads(r)
-        return r['response']['data'] 
+        return r['response']['data']
 
     def sync_packet(self, regid, packet_hash, packet_size, refid):
         url = 'https://%s/registrationprocessor/v1/registrationstatus/sync' % self.server
-        cookies = {'Authorization' : self.token}
-        headers = {'Center-Machine-RefId' : refid,
-                   'timestamp' : get_timestamp(),
-                   'Content-Type' : 'application/json'}
+        cookies = {'Authorization': self.token}
+        headers = {'Center-Machine-RefId': refid,
+                   'timestamp': get_timestamp(),
+                   'Content-Type': 'application/json'}
         j = {
             "id": "mosip.registration.sync",
             "version": "1.0",
@@ -81,7 +83,7 @@ class MosipSession:
                 "langCode": "eng"
             }]
         }
-    
+
         s = json.dumps(j)
         bytes_s = s.encode()
         b64_s = base64.urlsafe_b64encode(bytes_s).decode()
@@ -89,36 +91,37 @@ class MosipSession:
         encrypted = self.encrypt_using_server(appid, refid, b64_s)
         # encrypted is string
         encrypted = '"' + encrypted + '"'
-        r = requests.post(url, data=encrypted, cookies=cookies, headers=headers)
-        return r 
+        r = requests.post(url, data=encrypted, cookies=cookies, headers=headers, verify=self.ssl_verify)
+        return r
 
-    # in_path: full path of the unencrypted file
+        # in_path: full path of the unencrypted file
+
     # out_dir: output dir where the encrypted file will be written
     def encrypt_packet(self, in_path, out_dir, packet_name, refid):
         packet = open(in_path, 'rb').read()
         b64_s = base64.urlsafe_b64encode(packet).decode()  # convert to str
         encrypted_packet = self.encrypt_using_server('REGISTRATION', refid, b64_s)
-    
+
         # First write the encrypted packet
-        encrypted_path =  os.path.join(out_dir, packet_name)
+        encrypted_path = os.path.join(out_dir, packet_name)
         fd = open(encrypted_path, 'wb')
         fd.write(encrypted_packet.encode())  # convert encrypted_packet to type 'bytes' and write
         fd.close()
 
     def upload_packet(self, packet_file):
         url = 'https://%s/registrationprocessor/v1/packetreceiver/registrationpackets' % self.server
-        cookies = {'Authorization' : self.token}
-        files = {packet_file : open(packet_file, 'rb')}
-        r = requests.post(url, files=files, cookies=cookies)
+        cookies = {'Authorization': self.token}
+        files = {packet_file: open(packet_file, 'rb')}
+        r = requests.post(url, files=files, cookies=cookies, verify=self.ssl_verify)
         return r
 
     def get_rid(self, center_id, machine_id):
         url = 'https://%s/v1/ridgenerator/generate/rid/%s/%s' % (self.server, center_id, machine_id)
-        cookies = {'Authorization' : self.token}
-        r = requests.get(url, cookies=cookies)
-        r = r.content.decode() # to str 
+        cookies = {'Authorization': self.token}
+        r = requests.get(url, cookies=cookies, verify=self.ssl_verify)
+        r = r.content.decode()  # to str
         r = json.loads(r)
-        rid = r['response']['rid'] 
+        rid = r['response']['rid']
         return rid
 
 
@@ -131,6 +134,7 @@ def read_token(response):
             return value
 
     return None
+
 
 def get_timestamp(days_offset=None):
     '''
@@ -158,24 +162,23 @@ def decrypt_using_server(appid, refid, data, token, server):
     '''
     url = 'https://%s/v1/keymanager/decrypt' % server
     j = {
-        "id" : "string",
-        "metadata" : {},
-        "request" : {
-            "applicationId" : appid,
+        "id": "string",
+        "metadata": {},
+        "request": {
+            "applicationId": appid,
             "data": data,
-            "referenceId" : refid,
-            "timeStamp" :  get_timestamp(),
-            "salt" : None
+            "referenceId": refid,
+            "timeStamp": get_timestamp(),
+            "salt": None
         },
-        "requesttime" : get_timestamp(),
-        "version" : "1.0"
+        "requesttime": get_timestamp(),
+        "version": "1.0"
     }
-    cookies = {'Authorization' : token}
-    r = requests.post(url, json = j, cookies=cookies)
-    r = r.content.decode() # to str 
+    cookies = {'Authorization': token}
+    r = requests.post(url, json=j, cookies=cookies, verify=False)
+    r = r.content.decode()  # to str
     r = json.loads(r)
-    return r['response']['data'] 
-    
+    return r['response']['data']
 
 
 def sha256_hash(data):
@@ -209,5 +212,3 @@ def zip_packet(regid, base_path, out_dir):
     out_path = os.path.join(out_dir, regid)
     shutil.make_archive(out_path, 'zip', base_path)
     return out_path + '.zip'
-
-

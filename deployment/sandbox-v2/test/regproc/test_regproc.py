@@ -1,5 +1,3 @@
-#!/bin/python3
-
 import base64
 import os
 import config as conf
@@ -77,7 +75,7 @@ def template_to_packets(conf):
 def update_hashes(conf):
     for suffix in conf.sub_pkts:
         meta_path = os.path.join(os.path.join(conf.unenc_dir, suffix), 'packet_meta_info.json')
-        subprocess.run(['./gen_hash.py %s' % meta_path], shell=True)
+        subprocess.run(['python gen_hash.py %s' % meta_path], shell=True)
 
 
 def sync_packet(conf, mosip, final_zip, refid):

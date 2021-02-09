@@ -25,7 +25,7 @@
     "language" : "fra",
     "value" : "NATHAN KOIU"
   } ],
-  "IDSchemaVersion" : 1.0,
+  "IDSchemaVersion" : {{id_schema}},
   "phone" : "621989848",
   "district" : [ {
     "language" : "fra",

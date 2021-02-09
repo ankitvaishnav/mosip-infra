@@ -84,10 +84,10 @@
   "documents" : [ ],
   "metaData" : [ {
     "label" : "registrationId",
-    "value" : "10001910030000120201127131847"
+    "value" : "{{rid}}"
   }, {
     "label" : "creationDate",
-    "value" : "2020-11-27T13:23:19.771Z"
+    "value" : "{{creation_date}}"
   }, {
     "label" : "Registration Client Version Number",
     "value" : "1.1.1"
@@ -96,13 +96,13 @@
     "value" : "New"
   }, {
     "label" : "preRegistrationId",
-    "value" : null
+    "value" : "{{prereg_id}}"
   }, {
     "label" : "machineId",
-    "value" : "91003"
+    "value" : "{{machine_id}}"
   }, {
     "label" : "centerId",
-    "value" : "10001"
+    "value" : "{{center_id}}"
   }, {
     "label" : "dongleId",
     "value" : null
@@ -115,7 +115,7 @@
   } ],
   "operationsData" : [ {
     "label" : "officerId",
-    "value" : "910003"
+    "value" : "{{officer_id}}"
   }, {
     "label" : "officerBiometricFileName",
     "value" : null
@@ -156,18 +156,19 @@
     "value" : [ "audit" ]
   } ],
   "capturedRegisteredDevices" : [ {
-    "deviceCode" : "1e4a76fb-dffd-4b90-91ea-2cfc90896428",
+    "deviceCode" : "01d2463c-d8a3-4b56-a9c6-5169a143e734",
     "deviceServiceVersion" : "SB.WIN.001",
-    "digitalId" : {
-      "serialNo" : "403316652",
-      "make" : "Logitech",
-      "model" : "C615",
-      "type" : "Face",
-      "deviceSubType" : "Full face",
-      "deviceProviderId" : "SYNCBYTE.LTC165",
-      "deviceProvider" : "SYNCBYTE",
-      "dateTime" : "2020-11-27T13:14:17.207+00:00"
-    }
+    "digitalId" :
+	{
+      "serialNo":"298073940",
+      "deviceProvider":"SYNCBYTE",
+      "deviceProviderId":"SYNCBYTE.LTC165",
+      "make":"Logitech",
+      "model":"B525",
+      "dateTime":"2020-12-17T14:50:05.877Z",
+      "type":"Face",
+      "deviceSubType":"Full face"
+	}
   } ],
   "capturedNonRegisteredDevices" : null,
   "checkSum" : [ {
