@@ -19,3 +19,26 @@ class MyTestCase(unittest.TestCase):
         print("OKay")
         m = MinioWrapper()
         myPrint(m.listBuckets())
+
+    def test_bucketExists(self):
+        m = MinioWrapper()
+        myPrint(m.bucketExists("10001100010002420210223073024"))
+
+    def test_getObject(self):
+        m = MinioWrapper()
+        objects = [
+            'RESIDENT/RES_UPDATE/10001100010002420210223073024_evidence',
+            'RESIDENT/RES_UPDATE/10001100010002420210223073024_id',
+            'RESIDENT/RES_UPDATE/10001100010002420210223073024_optional'
+        ]
+        myPrint(m.bucketExists("10001100010002420210223073024"))
+        myPrint(m.listObjects("10001100010002420210223073024", recursive=True))
+        myPrint(m.listObjects("10001100010002420210223073024", recursive=False))
+        myPrint(
+            m.copyObject(
+                "my-test-bucket",
+                'RESIDENT/RES_PDATE/10001100010002420210223073024_evidence',
+                "10001100010002420210223073024",
+                "RESIDENT/RES_UPDATE/10001100010002420210223073024_evidence"
+            )
+        )

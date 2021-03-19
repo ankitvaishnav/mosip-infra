@@ -1,6 +1,5 @@
 import os
 
-
 minio_endpoint = os.getenv("mm_minio_endpoint")
 new_bucket_name = os.getenv("mm_new_bucket_name")
 access_key = os.getenv("mm_access_key")

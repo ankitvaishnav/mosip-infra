@@ -23,7 +23,9 @@ generatedDataFolderPath = os.path.abspath(
 )
 
 # result paths
+bucketListPath = os.path.join(generatedDataFolderPath, 'bucketList.json')
 packetListPath = os.path.join(generatedDataFolderPath, 'packetList.json')
+ignoredBucketListPath = os.path.join(generatedDataFolderPath, 'ignoredBucketList.json')
 credentialPreparedDataPath = os.path.join(generatedDataFolderPath, 'credentialPreparedData.json')
 runResult = os.path.join(generatedDataFolderPath, 'runResult.json')
 vidRequestId = os.path.join(generatedDataFolderPath, 'vidRequestId.json')

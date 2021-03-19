@@ -183,6 +183,11 @@ def match(reg, st):
     return True if m else False
 
 
+def regMatch(reg, st):
+    m = re.match(reg, st, re.DOTALL)
+    return True if m else False
+
+
 def ridToCenterTimestamp(rid):
     center_id = rid[:5]
     timestamp = rid[-14:-10] + '-' + rid[-10:-8] + '-' + rid[-8:-6] + 'T' + rid[-6:-4] + ':' + rid[-4:-2] + ':' + rid[

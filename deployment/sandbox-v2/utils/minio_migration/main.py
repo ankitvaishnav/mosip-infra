@@ -1,11 +1,8 @@
 import argparse
-import hashlib
-import json
 import sys
 import traceback
 
-from minioWrapper import MinioWrapper
-from paths import envPath, logPath
+from paths import envPath, logPath, bucketListPath, packetListPath, ignoredBucketListPath
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -14,7 +11,10 @@ load_dotenv(verbose=True)
 
 load_dotenv(dotenv_path=envPath)
 
-from utils import initLogger, myPrint, writeJsonFile, getJsonFile, ridToCenterTimestamp, getTimeInSec, timeDiff
+from actions.find_packets import FindPackets
+from actions.get_buckets import GetBuckets
+from actions.migration import Migration
+from utils import initLogger, myPrint, getTimeInSec, timeDiff
 import config as conf
 
 
@@ -32,12 +32,21 @@ def main():
     myPrint(conf.minio_endpoint)
     try:
         prev_time = start_time
-        if args.action == 'get_packets' or args.action == 'all':
-            myPrint("Action: get_vids", 1)
-            m = MinioWrapper()
-            myPrint(m.listBuckets())
+        if args.action == 'get_buckets' or args.action == 'all':
+            myPrint("Action: get_buckets", 1)
+            GetBuckets().run()
             prev_time, prstr = timeDiff(prev_time)
-            myPrint("Time taken by Action get_vids: " + prstr, 11)
+            myPrint("Time taken by Action get_buckets: " + prstr, 11)
+        if args.action == 'find_packets' or args.action == 'all':
+            myPrint("Action: find_packets", 1)
+            FindPackets().run()
+            prev_time, prstr = timeDiff(prev_time)
+            myPrint("Time taken by Action find_packets: " + prstr, 11)
+        if args.action == 'copy_packets' or args.action == 'all':
+            myPrint("Action: copy_packets", 1)
+            Migration().run()
+            prev_time, prstr = timeDiff(prev_time)
+            myPrint("Time taken by Action copy_packets: " + prstr, 11)
     except:
         prev_time, prstr = timeDiff(start_time)
         myPrint("Total time taken by the script: " + prstr, 11)
