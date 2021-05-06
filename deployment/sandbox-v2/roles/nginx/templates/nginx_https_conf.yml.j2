@@ -313,6 +313,10 @@ http {
            proxy_pass {{clusters.dmz.ingress.base_url}}/websub/;
         }
 
+        location /v1/mock-abis/ {
+           proxy_pass {{clusters.mz.ingress.base_url}}/v1/mock-abis/;
+        }
+
         error_page 404 /404.html;
             location = /40x.html {
         }
